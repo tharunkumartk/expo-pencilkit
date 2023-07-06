@@ -1,6 +1,6 @@
 # expo-pencilkit
 
-Expo/React Native wrapper for Apple's Pencilkit API.
+Expo/React Native wrapper for Apple's Pencilkit API. Currently only works on iOS. 
 
 # API documentation
 
