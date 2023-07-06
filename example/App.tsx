@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
 
-import * as ExpoPencilkit from 'expo-pencilkit';
+import { ExpoPencilkitView } from "expo-pencilkit";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>{ExpoPencilkit.hello()}</Text>
+    <View style={{ flex: 1 }}>
+      <ExpoPencilkitView onDrawingUpdate={(event) => {}} style={{ flex: 1 }} />
     </View>
   );
 }
@@ -13,8 +13,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

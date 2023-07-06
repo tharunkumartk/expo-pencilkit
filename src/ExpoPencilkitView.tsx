@@ -1,11 +1,14 @@
-import { requireNativeViewManager } from 'expo-modules-core';
-import * as React from 'react';
+import { requireNativeViewManager } from "expo-modules-core";
+import * as React from "react";
+import { ViewProps } from "react-native";
 
-import { ExpoPencilkitViewProps } from './ExpoPencilkit.types';
+export type Props = {
+  onDrawingUpdate: (event: { nativeEvent: { base64: string } }) => void;
+} & ViewProps;
 
-const NativeView: React.ComponentType<ExpoPencilkitViewProps> =
-  requireNativeViewManager('ExpoPencilkit');
+const NativeView: React.ComponentType<Props> =
+  requireNativeViewManager("ExpoPencilkit");
 
-export default function ExpoPencilkitView(props: ExpoPencilkitViewProps) {
+export default function ExpoPencilkitView(props: Props) {
   return <NativeView {...props} />;
 }
