@@ -4,6 +4,8 @@ import { ViewProps } from "react-native";
 
 export type Props = {
   sampleId: string;
+  url: string;
+  _id: string;
 } & ViewProps;
 
 const NativeView: React.ComponentType<Props> =

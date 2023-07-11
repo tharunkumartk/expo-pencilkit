@@ -22,6 +22,8 @@ class PencilkitView: UIView {
     }()
     
     var sampleId: String = "test";
+    var url: String = "";
+    var _id: String = UUID().uuidString;
 
     override init(frame:CGRect) {
       super.init(frame: frame)
@@ -41,6 +43,14 @@ class PencilkitView: UIView {
         
     func setSampleId(_ newSample: String) {
         self.sampleId=newSample
+    }
+
+    func setURL(_ newURL: String) {
+        self.url=newURL
+    }
+
+    func setID(_ newID: String) {
+        self._id=newID
     }
 }
 extension PencilkitView: PKCanvasViewDelegate{
@@ -63,13 +73,13 @@ extension PencilkitView: PKCanvasViewDelegate{
             dictionary["strokes"] = strokes
         }
         dictionary["image"] = drawing.image(from: frame, scale: 3).pngData()?.base64EncodedString()
-        dictionary["_id"] = UUID().uuidString
+        dictionary["_id"] = self._id
         dictionary["sampleId"] = self.sampleId;
         return dictionary
     }
     
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-      let url = URL(string: "http://192.168.31.197:8000/add-signature")!
+      let url = URL(string: self.url)!
         let params = ["drawing": convertPKDrawingToDictionary(drawing: canvasView.drawing)] as Dictionary<String, Any>
         var request = URLRequest(url:  url)
         request.httpMethod = "POST"
