@@ -1,6 +1,6 @@
 {
   "name": "expo-pencilkit",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Expo/React Native wrapper for Apple's Pencilkit API.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
