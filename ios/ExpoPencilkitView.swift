@@ -4,16 +4,17 @@ import UIKit
 
 
 class ExpoPencilkitView: ExpoView  {
-    let pencilkitView = PKCanvasView()
-    
+    let pkView = PencilkitView()
     
     required init(appContext: AppContext? = nil) {
-      super.init(appContext: appContext)
-      clipsToBounds = true
-      addSubview(pencilkitView)
+        super.init(appContext: appContext)
+        clipsToBounds = true
+        addSubview(pkView)
     }
-
+    
     override func layoutSubviews() {
-            pencilkitView.frame = bounds
+        pkView.frame = bounds
     }
+    
 }
+

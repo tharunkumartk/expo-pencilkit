@@ -3,7 +3,7 @@ import * as React from "react";
 import { ViewProps } from "react-native";
 
 export type Props = {
-  onDrawingUpdate: (event: { nativeEvent: { base64: string } }) => void;
+  fileName: string;
 } & ViewProps;
 
 const NativeView: React.ComponentType<Props> =
