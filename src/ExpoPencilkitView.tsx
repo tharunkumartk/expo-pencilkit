@@ -3,7 +3,7 @@ import * as React from "react";
 import { ViewProps } from "react-native";
 
 export type Props = {
-  fileName: string;
+  sampleId: string;
 } & ViewProps;
 
 const NativeView: React.ComponentType<Props> =
