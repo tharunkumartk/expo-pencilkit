@@ -13,10 +13,10 @@ public class ExpoPencilkitModule: Module {
         Prop("_id") { (view, _id: String) in
             view.pkView.setID(_id)
         }
-        Prop("width") { (view, width: Numeric) in
+        Prop("width") { (view, width: Int) in
             view.pkView.setWidth(width)
         }
-        Prop("height") { (view, height: Numeric) in
+        Prop("height") { (view, height: Int) in
             view.pkView.setHeight(height)
         }
     }

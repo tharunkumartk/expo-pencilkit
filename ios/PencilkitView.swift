@@ -24,8 +24,8 @@ class PencilkitView: UIView {
     var sampleId: String = "test";
     var url: String = "";
     var _id: String = UUID().uuidString;
-    var width: Numeric = 100
-    var height: Numeric = 100
+    var width: Int = 100
+    var height: Int = 100
 
     override init(frame:CGRect) {
       super.init(frame: frame)
@@ -55,11 +55,11 @@ class PencilkitView: UIView {
         self._id=newID
     }
 
-    func setWidth(_ newWidth: Numeric) {
+    func setWidth(_ newWidth: Int) {
         self.width=newWidth
     }
 
-    func setHeight(_ newHeight: Numeric) {
+    func setHeight(_ newHeight: Int) {
         self.height=newHeight
     }
 }
