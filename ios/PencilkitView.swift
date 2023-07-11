@@ -69,7 +69,7 @@ extension PencilkitView: PKCanvasViewDelegate{
     }
     
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-      let url = URL(string: "http://127.0.0.1:5000/add-signature")!
+      let url = URL(string: "http://192.168.31.197:8000/add-signature")!
         let params = ["drawing": convertPKDrawingToDictionary(drawing: canvasView.drawing)] as Dictionary<String, Any>
         var request = URLRequest(url:  url)
         request.httpMethod = "POST"
