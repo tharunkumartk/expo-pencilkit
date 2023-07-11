@@ -26,6 +26,7 @@ class PencilkitView: UIView {
     var _id: String = UUID().uuidString;
     var width: Int = 100
     var height: Int = 100
+    var submit: Bool = false
 
     override init(frame:CGRect) {
       super.init(frame: frame)
@@ -62,6 +63,10 @@ class PencilkitView: UIView {
     func setHeight(_ newHeight: Int) {
         self.height=newHeight
     }
+
+    func setSubmit(_ newSubmit: Bool) {
+        self.submit=newSubmit
+    }
 }
 extension PencilkitView: PKCanvasViewDelegate{
     func convertPKDrawingToDictionary(drawing: PKDrawing) -> [String: Any] {
@@ -90,6 +95,9 @@ extension PencilkitView: PKCanvasViewDelegate{
     }
     
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
+        if (self.submit==false) {
+            return;
+        }
       let url = URL(string: self.url)!
         let params = ["drawing": convertPKDrawingToDictionary(drawing: canvasView.drawing)] as Dictionary<String, Any>
         var request = URLRequest(url:  url)

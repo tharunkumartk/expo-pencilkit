@@ -19,6 +19,9 @@ public class ExpoPencilkitModule: Module {
         Prop("height") { (view, height: Int) in
             view.pkView.setHeight(height)
         }
+        Prop("submit") { (view, submit: Bool) in
+            view.pkView.setSubmit(submit)
+        }
     }
   }
 }

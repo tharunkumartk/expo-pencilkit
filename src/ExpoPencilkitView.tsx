@@ -8,6 +8,7 @@ export type Props = {
   _id: string;
   width: number;
   height: number;
+  submit: boolean;
 } & ViewProps;
 
 const NativeView: React.ComponentType<Props> =
