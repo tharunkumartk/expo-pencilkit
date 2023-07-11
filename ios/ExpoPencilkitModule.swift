@@ -13,6 +13,12 @@ public class ExpoPencilkitModule: Module {
         Prop("_id") { (view, _id: String) in
             view.pkView.setID(_id)
         }
+        Prop("width") { (view, width: Numeric) in
+            view.pkView.setWidth(width)
+        }
+        Prop("height") { (view, height: Numeric) in
+            view.pkView.setHeight(height)
+        }
     }
   }
 }

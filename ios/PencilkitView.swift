@@ -24,6 +24,8 @@ class PencilkitView: UIView {
     var sampleId: String = "test";
     var url: String = "";
     var _id: String = UUID().uuidString;
+    var width: Numeric = 100
+    var height: Numeric = 100
 
     override init(frame:CGRect) {
       super.init(frame: frame)
@@ -52,6 +54,14 @@ class PencilkitView: UIView {
     func setID(_ newID: String) {
         self._id=newID
     }
+
+    func setWidth(_ newWidth: Numeric) {
+        self.width=newWidth
+    }
+
+    func setHeight(_ newHeight: Numeric) {
+        self.height=newHeight
+    }
 }
 extension PencilkitView: PKCanvasViewDelegate{
     func convertPKDrawingToDictionary(drawing: PKDrawing) -> [String: Any] {
@@ -75,6 +85,7 @@ extension PencilkitView: PKCanvasViewDelegate{
         dictionary["image"] = drawing.image(from: frame, scale: 3).pngData()?.base64EncodedString()
         dictionary["_id"] = self._id
         dictionary["sampleId"] = self.sampleId;
+        dictionary["boundingBox"] = ["width": self.width, "height": self.height]
         return dictionary
     }
     
